@@ -1,0 +1,1587 @@
+{% load i18n %}
+
+{% load static from staticfiles %}
+
+{% load crispy_forms_tags %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>{% trans 'Lemk - разработка сайтов от Даниила Костышака' %}</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="{% static 'asset/css/bootstrap.min.css' %}" rel="stylesheet">
+    
+    <!-- Font Awesome CSS -->
+    <link href="{% static 'css/font-awesome.min.css' %}" rel="stylesheet">
+    
+    
+    <!-- Animate CSS -->
+    <link href="{% static 'css/animate.css' %}" rel="stylesheet" >
+    
+    <!-- Owl-Carousel -->
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.css' %}" >
+    <link rel="stylesheet" href="{% static 'css/owl.theme.css' %}" >
+    <link rel="stylesheet" href="{% static 'css/owl.transitions.css' %}" >
+
+    <!-- Custom CSS -->
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+    <link href="{% static 'css/responsive.css' %}" rel="stylesheet">
+    
+    <!-- Colors CSS -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/color/green.css' %}">
+    
+    
+    
+    <!-- Colors CSS -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/color/green.css' %}" title="green">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/color/light-red.css' %}" title="light-red">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/color/blue.css' %}" title="blue">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/color/light-blue.css' %}" title="light-blue">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/color/yellow.css' %}" title="yellow">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/color/light-green.css' %}" title="light-green">
+
+    <!-- Custom Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    
+    
+    <!-- Modernizer js -->
+    <script src="{% static 'js/modernizr.custom.js' %}"></script>
+
+
+    <script src="https://use.fontawesome.com/6e4fa739ae.js"></script>
+
+
+    
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <style type="text/css">
+
+.noselect {
+
+    -moz-user-select: none;
+
+    -webkit-user-select: none;
+
+    -ms-user-select: none;
+
+    -o-user-select: none;
+
+    user-select: none;
+
+}
+
+.contacts {
+    /*color: #03233d;*/
+    color: black;
+}
+
+.contacts:hover, .contacts:focus {
+    color: #043b68;
+
+}
+
+.welcome-section p {
+    padding-top: 20px;
+    color: black;
+}
+
+</style>
+
+</head>
+
+<body class="index">
+    
+    
+    <!-- Styleswitcher
+================================================== -->
+        <!-- <div class="colors-switcher"> -->
+            <!-- <a id="show-panel" class="hide-panel"><i class="fa fa-tint"></i></a>         -->
+                <!-- <ul class="colors-list"> -->
+                    <!-- <li><a title="Light Red" onClick="setActiveStyleSheet('light-red'); return false;" class="light-red"></a></li> -->
+                    <!-- <li><a title="Blue" class="blue" onClick="setActiveStyleSheet('blue'); return false;"></a></li> -->
+                    <!-- <li class="no-margin"><a title="Light Blue" onClick="setActiveStyleSheet('light-blue'); return false;" class="light-blue"></a></li> -->
+                    <!-- <li><a title="Green" class="green" onClick="setActiveStyleSheet('green'); return false;"></a></li> -->
+                    
+                    <!-- <li class="no-margin"><a title="light-green" class="light-green" onClick="setActiveStyleSheet('light-green'); return false;"></a></li> -->
+                    <!-- <li><a title="Yellow" class="yellow" onClick="setActiveStyleSheet('yellow'); return false;"></a></li> -->
+                    
+                <!-- </ul> -->
+
+        <!-- </div>   -->
+<!-- Styleswitcher End
+================================================== -->
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand page-scroll noselect" href="#page-top">Lemk</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse noselect" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#feature"> {% trans 'Особенности' %}</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#portfolio"> {% trans 'Портфолио' %}</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#about-us"> {% trans 'Приемущества' %}</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#service"> {% trans 'Услуги' %}</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#team"> {% trans 'Про меня' %}</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#pricing"> {% trans 'Цены' %}</a>
+                    </li>
+                    <!-- <li> -->
+                        <!-- <a class="page-scroll" href="#latest-news"> {% trans 'Блог' %}</a> -->
+                    <!-- </li> -->
+                    <li>
+                        <a class="page-scroll" href="#testimonial"> {% trans 'Отзывы' %}</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#partner"> {% trans 'Партнеры' %}</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#contact"> {% trans 'Контакты' %}</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+    
+    
+    
+    <!-- Start Home Page Slider -->
+    <section id="page-top">
+        <!-- Carousel -->
+        <div id="main-slide" class="carousel slide" data-ride="carousel">
+
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#main-slide" data-slide-to="0" class="active"></li>
+                <li data-target="#main-slide" data-slide-to="1"></li>
+                <li data-target="#main-slide" data-slide-to="2"></li>
+            </ol>
+            <!--/ Indicators end-->
+
+            <!-- Carousel inner -->
+            <div class="carousel-inner">
+                <div class="item active">
+                    <img class="img-responsive" src="{% static 'images/header-bg-1.jpg' %}" alt="slider">
+                    <div class="slider-content">
+                        <div class="col-md-12 text-center noselect">
+                            <h1 class="animated3 noselect">
+                                <span class="noselect"><strong class="noselect">{% trans 'Lemk' %}</strong>  {% trans '- Даниил Костышак' %}</span>
+                            </h1>
+                            <p class="animated2">{% trans 'Создание классных сайтов' %}<br> {% trans 'по лучшей цене.' %}</p>	
+                            <a href="#feature" class="page-scroll btn btn-primary animated1">{% trans 'Узнать Больше' %}</a>
+                        </div>
+                    </div>
+                </div>
+                <!--/ Carousel item end -->
+                
+                <div class="item">
+                    <img class="img-responsive" src="{% static 'images/header-back.png' %}" alt="slider">
+                    
+                    <div class="slider-content">
+                        <div class="col-md-12 text-center noselect">
+                            <h1 class="animated1">
+                    		  <span> {% trans 'Добро пожаловать в' %}<strong> {% trans 'Lemk' %}</strong></span>
+                    	    </h1>
+                            <p class="animated2">{% trans 'Создание отличных' %}<br> {% trans 'цифровых продуктов для вашего бизнеса' %}</p>
+                            <a href="#feature" class="page-scroll btn btn-primary animated3">{% trans 'Узнать Больше' %}</a>
+                        </div>
+                    </div>
+                </div>
+                <!--/ Carousel item end -->
+                
+                <div class="item">
+                    <img class="img-responsive" src="{% static 'images//galaxy.jpg' %}" alt="slider">
+                    <div class="slider-content">
+                        <div class="col-md-12 text-center noselect">
+                            <h1 class="animated2">
+                                <span> {% trans 'История' %}<strong>{% trans ' Успеха' %}</strong></span>
+                            </h1>
+                            <p class="animated1">{% trans 'Только лучшие технологии' %}<br> {% trans 'веб-программирования для вас' %}</p>	
+                             <a class="animated3 slider btn btn-primary page-scroll btn-min-block" href="#feature">{% trans 'Узнать Больше' %}</a><a class="animated3 slider btn btn-default btn-min-block page-scroll" href="#portfolio">{% trans 'Портфолио' %}</a>
+                                
+                        </div>
+                    </div>
+                </div>
+                <!--/ Carousel item end -->
+            </div>
+            <!-- Carousel inner end-->
+
+            <!-- Controls -->
+            <a class="left carousel-control" href="#main-slide" data-slide="prev">
+                <span><i class="fa fa-angle-left"></i></span>
+            </a>
+            <a class="right carousel-control" href="#main-slide" data-slide="next">
+                <span><i class="fa fa-angle-right"></i></span>
+            </a>
+        </div>
+        <!-- /carousel -->
+    </section>
+    <!-- End Home Page Slider -->
+
+    
+    
+    <!-- Start Feature Section -->
+        <section id="feature" class="feature-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 col-sm-6 col-xs-12">
+                        <div class="feature">
+                            <i class="fa fa-laptop" aria-hidden="true"></i>
+                            <div class="feature-content">
+                                <h4>Создание Landing-Page</h4>
+                                <p>Разработка красивых адаптивных лендингов под ключ со стильным современным дизайном и анимацией.</p>
+                            </div>
+                        </div>
+                    </div><!-- /.col-md-3 -->
+                    <div class="col-md-3 col-sm-6 col-xs-12">
+                        <div class="feature">
+                            <i class="fa fa-gift"></i>
+                            <div class="feature-content">
+                                <h4>Разработка интернет магазинов</h4>
+                                <p>Создание продвинутых интернет магазинов на платформах Wordpress, Wix, PrestaShop по невысокой цене.</p>
+                            </div>
+                        </div>
+                    </div><!-- /.col-md-3 -->
+                    <div class="col-md-3 col-sm-6 col-xs-12">
+                        <div class="feature">
+                            <i class="fa fa-code" aria-hidden="true"></i>
+                            <div class="feature-content">
+                                <h4>Программирование</h4>
+                                <p>Написание сложных сайтов на языке Python - фреймворк Django c полным циклом разработки фронтенда и бекенда.</p>
+                            </div>
+                        </div>
+                    </div><!-- /.col-md-3 -->
+                    <div class="col-md-3 col-sm-6 col-xs-12">
+                        <div class="feature">
+                            <i class="fa fa-keyboard-o" aria-hidden="true"></i>
+                            <div class="feature-content">
+                                <h4>Доработка Сайтов</h4>
+                                <p>Устранение неполадок на существующих сайтах и их улучшение. Оптимизация работы и осовременивание дизайна.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- /.row -->
+            
+            </div><!-- /.container -->
+        </section>
+        <!-- End Feature Section -->
+    
+    
+    <!-- Start Call to Action Section -->
+    <section class="call-to-action">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 noselect">
+                    <h1>Сайт - отличный инструмент для монетизации вашего бизнесса. </br> Доказано что наличие хорошего и современного сайта </br>значительно повышает доверие клиентов к вашему бизнесу</h1>
+                    <a href="#pricing" class="page-scroll"><button type="submit" class="btn btn-primary">Узнать Цены</button></a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Call to Action Section -->
+    
+    
+    
+    <!-- Start Portfolio Section -->
+        <section id="portfolio" class="portfolio-section-1">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="section-title text-center noselect">
+                            <h3>Мое портфолио</h3>
+                            <p>Сайты которые уже приносят прибыль моим клиентам</p>
+                        </div>                        
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        
+                        <!-- Start Portfolio items -->
+                        <ul id="portfolio-list">
+                            <li>
+                                <div class="portfolio-item">
+                                <a href="#portfolio-modal1" data-toggle="modal" class="link-1">
+                                    <img src="{% static 'images/portfolio/portfolio-zelenyi-gai.png' %}" class="img-responsive" alt="" />
+                                    <div class="portfolio-caption">
+                                        <h4>Сайт по Теме Озеленения</h4>
+                                    </div>
+                                </a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="portfolio-item">
+                                <a href="#portfolio-modal2" data-toggle="modal" class="link-1">
+                                    <img src="{% static 'images/portfolio/portfolio-xn.png' %}" class="img-responsive" alt="" />
+                                    <div class="portfolio-caption">
+                                        <h4>Сайт Агенства Недвижимости</h4>
+                                    </div>
+                                </a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="portfolio-item">
+                                <a href="#portfolio-modal3" data-toggle="modal" class="link-1">
+                                    <img src="{% static 'images/portfolio/portfolio-ded-moroz.png' %}" class="img-responsive" alt="" />
+                                    <div class="portfolio-caption">
+                                        <h4>Сайт Деда Мороза</h4>
+
+                                    </div>
+                                </a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="portfolio-item">
+                                <a href="#portfolio-modal4" data-toggle="modal" class="link-1">
+                                    <img src="{% static 'images/portfolio/portfolio-law.png' %}" class="img-responsive" alt="" />
+                                    <div class="portfolio-caption">
+                                        <h4>Сайт для Адвоката</h4>
+                                    </div>
+                                </a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="portfolio-item">
+                                <a href="#portfolio-modal5" data-toggle="modal" class="link-1">
+                                    <img src="{% static 'images/portfolio/portfolio-restaurant.png' %}" class="img-responsive" alt="" />
+                                    <div class="portfolio-caption">
+                                        <h4>Сайт Ресторана</h4>
+                                    </div>
+                                </a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="portfolio-item">
+                                    <a href="#portfolio-modal6" data-toggle="modal" class="link-1"><img src="{% static 'images/portfolio/portfolio-buildings-sip.png' %}" class="img-responsive" alt="" />
+                                    <div class="portfolio-caption">
+                                    <h4>Сайт Строительной Компании</h4>
+                                    </div>
+                                    </a>
+                                </div>
+                            </li>
+
+                            <li>
+                                <div class="portfolio-item">
+                                <a href="#portfolio-modal7" data-toggle="modal" class="link-1">
+                                    <img src="{% static 'images/portfolio/portfolio-photo.png' %}" class="img-responsive" alt="" />
+                                    <div class="portfolio-caption">
+                                        <h4>Сайт для Фотостудии</h4>
+                                        
+                                    </div>
+                                </a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="portfolio-item">
+                                <a href="#portfolio-modal8" data-toggle="modal" class="link-1">
+                                    <img src="{% static 'images/portfolio/portfolio-dolphin.png' %}" class="img-responsive" alt="" />
+                                    <div class="portfolio-caption">
+                                        <h4>Сайт по Мобильной Разработке</h4>
+                                    </div>
+                                </a>
+                                </div>
+
+                            </li>
+                            <li>
+                                <div class="portfolio-item">
+                                    <a href="#portfolio-modal9" data-toggle="modal" class="link-1"><img src="{% static 'images/portfolio/portfolio-music.png' %}" class="img-responsive" alt="" />
+                                    <div class="portfolio-caption">
+                                    <h4>Сайт Музыкальной Группы</h4>
+                                    </div>
+                                    </a>
+                                </div>
+                            </li>
+                             
+                        </ul>
+                        <!-- End Portfolio items -->
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End Portfolio Section -->
+
+            <!-- Start Portfolio Modal 1 Section -->
+        <div class="section-modal modal fade" id="portfolio-modal1" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-content">
+                <div class="close-modal" data-dismiss="modal">
+                    <div class="lr">
+                        <div class="rl">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="container">
+                    <div class="row">
+                        <div class="section-title text-center">
+                            <h3>{% trans 'Детали Портфолио' %}</h3>
+                            <p>{% trans 'Сайт компании по озеленению и зеленым насаждениям' %}</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        
+                        <div class="col-md-6">
+                            <img src="{% static 'images/portfolio/modal/gai1.png' %}" class="img-responsive" alt="..">
+                        </div>
+                        <div class="col-md-6">
+                            <img src="{% static 'images/portfolio/modal/gai2.png' %}" class="img-responsive" alt="..">
+                        </div>
+                        
+                    </div><!-- /.row -->
+                </div>                
+            </div>
+        </div>
+        <!-- End Portfolio Modal Section -->
+
+        <!-- Start Portfolio Modal 2 Section -->
+        <div class="section-modal modal fade" id="portfolio-modal2" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-content">
+                <div class="close-modal" data-dismiss="modal">
+                    <div class="lr">
+                        <div class="rl">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="container">
+                    <div class="row">
+                        <div class="section-title text-center">
+                            <h3>{% trans 'Детали Портфолио' %}</h3>
+                            <p>{% trans 'Сайт агенства Недвижимости' %}</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        
+                        <div class="col-md-6">
+                            <img src="{% static 'images/portfolio/modal/xn1.png' %}" class="img-responsive" alt="..">
+                        </div>
+                        <div class="col-md-6">
+                            <img src="{% static 'images/portfolio/modal/xn2.png' %}" class="img-responsive" alt="..">
+                        </div>
+                        
+                    </div><!-- /.row -->
+                </div>                
+            </div>
+        </div>
+        <!-- End Portfolio Modal Section -->
+
+        <!-- Start Portfolio Modal 3 Section -->
+        <div class="section-modal modal fade" id="portfolio-modal3" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-content">
+                <div class="close-modal" data-dismiss="modal">
+                    <div class="lr">
+                        <div class="rl">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="container">
+                    <div class="row">
+                        <div class="section-title text-center">
+                            <h3>{% trans 'Детали Портфолио' %}</h3>
+                            <p>{% trans 'Сайт онлайн Деда Мороза' %}</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        
+                        <div class="col-md-6">
+                            <img src="{% static 'images/portfolio/modal/ded1.png' %}" class="img-responsive" alt="..">
+                        </div>
+                        <div class="col-md-6">
+                            <img src="{% static 'images/portfolio/modal/ded2.png' %}" class="img-responsive" alt="..">
+                        </div>
+                        
+                    </div><!-- /.row -->
+                </div>                
+            </div>
+        </div>
+        <!-- End Portfolio Modal Section -->
+
+        <!-- Start Portfolio Modal 4 Section -->
+        <div class="section-modal modal fade" id="portfolio-modal4" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-content">
+                <div class="close-modal" data-dismiss="modal">
+                    <div class="lr">
+                        <div class="rl">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="container">
+                    <div class="row">
+                        <div class="section-title text-center">
+                            <h3>{% trans 'Детали Портфолио' %}</h3>
+                            <p>{% trans 'Сайт Компании по адвокатским услугам' %}</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        
+                        <div class="col-md-6">
+                            <img src="{% static 'images/portfolio/modal/law1.png' %}" class="img-responsive" alt="..">
+                        </div>
+                        <div class="col-md-6">
+                            <img src="{% static 'images/portfolio/modal/law2.png' %}" class="img-responsive" alt="..">
+                        </div>
+                        
+                    </div><!-- /.row -->
+                </div>                
+            </div>
+        </div>
+        <!-- End Portfolio Modal Section -->
+
+        <!-- Start Portfolio Modal 5 Section -->
+        <div class="section-modal modal fade" id="portfolio-modal5" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-content">
+                <div class="close-modal" data-dismiss="modal">
+                    <div class="lr">
+                        <div class="rl">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="container">
+                    <div class="row">
+                        <div class="section-title text-center">
+                            <h3>{% trans 'Детали Портфолио' %}</h3>
+                            <p>{% trans 'Сайт Ресторана' %}</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        
+                        <div class="col-md-6">
+                            <img src="{% static 'images/portfolio/modal/restaurant1.png' %}" class="img-responsive" alt="..">
+                        </div>
+                        <div class="col-md-6">
+                            <img src="{% static 'images/portfolio/modal/restaurant2.png' %}" class="img-responsive" alt="..">
+                        </div>
+                        
+                    </div><!-- /.row -->
+                </div>                
+            </div>
+        </div>
+        <!-- End Portfolio Modal Section -->
+
+        <!-- Start Portfolio Modal 6 Section -->
+        <div class="section-modal modal fade" id="portfolio-modal6" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-content">
+                <div class="close-modal" data-dismiss="modal">
+                    <div class="lr">
+                        <div class="rl">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="container">
+                    <div class="row">
+                        <div class="section-title text-center">
+                            <h3>{% trans 'Детали Портфолио' %}</h3>
+                            <p>{% trans 'Сайт компании по строительству каркасно-панельных домов' %}</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        
+                        <div class="col-md-6">
+                            <img src="{% static 'images/portfolio/modal/sip1.png' %}" class="img-responsive" alt="..">
+                        </div>
+                        <div class="col-md-6">
+                            <img src="{% static 'images/portfolio/modal/sip2.png' %}" class="img-responsive" alt="..">
+                        </div>
+                        
+                    </div><!-- /.row -->
+                </div>                
+            </div>
+        </div>
+        <!-- End Portfolio Modal Section -->
+
+        <!-- Start Portfolio Modal 7 Section -->
+        <div class="section-modal modal fade" id="portfolio-modal7" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-content">
+                <div class="close-modal" data-dismiss="modal">
+                    <div class="lr">
+                        <div class="rl">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="container">
+                    <div class="row">
+                        <div class="section-title text-center">
+                            <h3>{% trans 'Детали Портфолио' %}</h3>
+                            <p>{% trans 'Сайт Фотостудии' %}</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        
+                        <div class="col-md-6">
+                            <img src="{% static 'images/portfolio/modal/photo1.png' %}" class="img-responsive" alt="..">
+                        </div>
+                        <div class="col-md-6">
+                            <img src="{% static 'images/portfolio/modal/photo2.png' %}" class="img-responsive" alt="..">
+                        </div>
+                        
+                    </div><!-- /.row -->
+                </div>                
+            </div>
+        </div>
+        <!-- End Portfolio Modal Section -->
+
+    <!-- Start Portfolio Modal 8 Section -->
+        <div class="section-modal modal fade" id="portfolio-modal8" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-content">
+                <div class="close-modal" data-dismiss="modal">
+                    <div class="lr">
+                        <div class="rl">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="container">
+                    <div class="row">
+                        <div class="section-title text-center">
+                            <h3>{% trans 'Детали Портфолио' %}</h3>
+                            <p>{% trans 'Сайт компании по разработке Android и IOS приложений' %}</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        
+                        <div class="col-md-6">
+                            <img src="{% static 'images/portfolio/modal/dolphin1.png' %}" class="img-responsive" alt="..">
+                        </div>
+                        <div class="col-md-6">
+                            <img src="{% static 'images/portfolio/modal/dolphin2.png' %}" class="img-responsive" alt="..">
+                        </div>
+                        
+                    </div><!-- /.row -->
+                </div>                
+            </div>
+        </div>
+        <!-- End Portfolio Modal Section -->
+    
+    <!-- Start Portfolio Modal 9 Section -->
+        <div class="section-modal modal fade" id="portfolio-modal9" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-content">
+                <div class="close-modal" data-dismiss="modal">
+                    <div class="lr">
+                        <div class="rl">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="container">
+                    <div class="row">
+                        <div class="section-title text-center">
+                            <h3>{% trans 'Детали Портфолио' %}</h3>
+                            <p>{% trans 'Сайт-каталог музыкальной продукции' %}</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        
+                        <div class="col-md-6">
+                            <img src="{% static 'images/portfolio/modal/music2.png' %}" class="img-responsive" alt="..">
+                        </div>
+                        <div class="col-md-6">
+                            <img src="{% static 'images/portfolio/modal/music1.png' %}" class="img-responsive" alt="..">
+                        </div>
+                        
+                    </div><!-- /.row -->
+                </div>                
+            </div>
+        </div>
+        <!-- End Portfolio Modal Section -->
+    
+    
+    <!-- Start About Us Section -->
+    <section id="about-us" class="about-us-section-1">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-sm-12">
+                    <div class="section-title text-center">
+                            <h3>Приемущества</h3>
+                            <p>Детализация преимуществ сотрудничества со мной</p>
+                        </div>
+                </div>
+            </div>
+            <div class="row">
+                
+                <div class="col-md-4">
+                    <div class="welcome-section text-center">
+                        <img src="{% static 'images/site-create-logo.jpg' %}" class="img-responsive" alt="..">
+                        <h4>Лучшие технологии бекенда</h4>
+                        <div class="border"></div>
+                        <p>В процессе создания бекенда (движка) - содержащего всю логику работы сайта, я  использую только самые современные и передовые технологии веб-разработки: Python, Django, DB SQLite3 и MySQL 5.7, Apache2 и другие.</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="welcome-section text-center">
+                        <img src="{% static 'images/frontend1.jpg' %}" class="img-responsive" alt="..">
+                        <h4>Передовые технологии фронтенда</h4>
+                        <div class="border"></div>
+                        <p>При создании внешнего облика сайта я делаю ставку на приятный дизайн и хорошую информативность. Для этого я использую следующие технологии: HTML5/CSS3, Twitter Bootstrap, JavaScript, jQuery, Ajax и другие.</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="welcome-section text-center">
+                        <img src="{% static 'images/phones.jpg' %}" class="img-responsive" alt="..">
+                        <h4>Всегда на связи</h4>
+                        <div class="border"></div>
+                        <p>Вы можете связатся со мной в течении дня по любым вопросам. Мне можно писать в Facebook, Telegram, WhatsApp, Viber, Skype, через email и по телефону. Если вы из Харькова - возможна личная встреча.</p>
+                    </div>
+                </div>
+                
+            </div><!-- /.row -->            
+            
+        </div><!-- /.container -->
+    </section>
+    <!-- End About Us Section -->
+
+
+    <!-- Start About Us Section 2 -->
+    <div class="about-us-section-2">
+        <div class="container">
+            <div class="row">
+                
+                <div class="col-md-6">
+                    <div class="skill-shortcode">
+                        
+                        <!-- Progress Bar -->
+                        <div class="skill">
+                            <p>WordPress</p>          
+                            <div class="progress">         
+                                <div class="progress-bar" role="progressbar"  data-percentage="60">
+                                    <span class="progress-bar-span" >60%</span>
+                                    <span class="sr-only">60% Complete</span>
+                                </div>
+                            </div>  
+                        </div>
+                        
+                        <!-- Progress Bar -->
+                        <div class="skill">
+                            <p>HTML5 & CSS3</p>          
+                            <div class="progress">         
+                                <div class="progress-bar" role="progressbar"  data-percentage="90">
+                                    <span class="progress-bar-span" >90%</span>
+                                    <span class="sr-only">90% Complete</span>
+                                </div>
+                            </div>  
+                        </div>
+                        
+                        <!-- Progress Bar -->
+                        <div class="skill">
+                            <p>JavaScript/jQuery</p>          
+                            <div class="progress">         
+                                <div class="progress-bar" role="progressbar"  data-percentage="80">
+                                    <span class="progress-bar-span" >80%</span>
+                                    <span class="sr-only">80% Complete</span>
+                                </div>
+                            </div>  
+                        </div>
+                        
+                        <!-- Progress Bar -->
+                        <div class="skill">
+                            <p>Python/Django</p>          
+                            <div class="progress">         
+                                <div class="progress-bar" role="progressbar"  data-percentage="100">
+                                    <span class="progress-bar-span" >100%</span>
+                                    <span class="sr-only">100% Complete</span>
+                                </div>
+                            </div>  
+                        </div>
+                        
+                        <!-- Progress Bar -->
+                        <div class="skill">
+                            <p>Wix</p>          
+                            <div class="progress">         
+                                <div class="progress-bar" role="progressbar"  data-percentage="75">
+                                    <span class="progress-bar-span" >75%</span>
+                                    <span class="sr-only">75% Complete</span>
+                                </div>
+                            </div>  
+                        </div>
+                                                            
+                    </div>
+                </div>
+                
+                <div class="col-md-6">
+                    <div id="carousel-example-generic" class="carousel slide about-slide" data-ride="carousel">
+                        <!-- Indicators -->
+                        <ol class="carousel-indicators">
+                            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                        </ol>
+
+                        <!-- Wrapper for slides -->
+                        <div class="carousel-inner">
+                            <div class="item active">
+                                <img src="{% static 'images/html5-css3.png' %}" alt="">
+                            </div>
+                            <div class="item">
+                                <img src="{% static 'images/wordpress.png' %}" alt="">
+                            </div>
+                            <div class="item">
+                                <img src="{% static 'images/django2.png' %}" alt="">
+                            </div>
+    
+                        </div>
+  
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <!-- Start About Us Section 2 -->
+
+
+    
+
+
+    <!-- Start Feature Section -->
+        <section id="service" class="services-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="section-title text-center">
+                            <h3>Услуги</h3>
+                            <p>Все то что вы можете заказать здесь и сейчас по лучшей цене !</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 col-sm-6 col-xs-12">
+                        <div class="feature-2">
+                            <div class="media">
+                                <div class="pull-left">
+                                    <i class="fa fa-laptop"></i>
+                                    <div class="border"></div>
+                                </div>
+                                <div class="media-body">
+                                    <h4 class="media-heading">Лендинг</h4>
+                                    <p>Разработка отличных современных лендингов под ключ в быстрый срок и по привлекательной цене.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- /.col-md-4 -->
+                    <div class="col-md-4 col-sm-6 col-xs-12">
+                        <div class="feature-2">
+                            <div class="media">
+                                <div class="pull-left">
+                                    <i class="fa fa-css3"></i>
+                                    <div class="border"></div>
+                                </div>
+                                <div class="media-body">
+                                    <h4 class="media-heading">HTML5 & CSS3</h4>
+                                    <p>Верстка адаптивных шаблонов по макету, натяжка на CMS, доработка и апгрейд существующих шаблонов </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- /.col-md-4 -->
+                    <div class="col-md-4 col-sm-6 col-xs-12">
+                        <div class="feature-2">
+                            <div class="media">
+                                <div class="pull-left">
+                                    <i class="fa fa-wordpress"></i>
+                                    <div class="border"></div>
+                                </div>
+                                <div class="media-body">
+                                    <h4 class="media-heading">Wordpress</h4>
+                                    <p>Создание сайтов на базе популярной CMS WordPress, включая блоги, лендинги и интернет-магазины</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- /.col-md-4 -->
+                    <div class="col-md-4 col-sm-6 col-xs-12">
+                        <div class="feature-2">
+                            <div class="media">
+                                <div class="pull-left">
+                                    <i class="fa fa-gift"></i>
+                                    <div class="border"></div>
+                                </div>
+                                <div class="media-body">
+                                    <h4 class="media-heading">Интернет Магазин</h4>
+                                    <p>Создание продвинутого интернет магазина на платформе Wordpress, Wix, PrestaShop по хорошей цене.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- /.col-md-4 -->
+                    <div class="col-md-4 col-sm-6 col-xs-12">
+                        <div class="feature-2">
+                            <div class="media">
+                                <div class="pull-left">
+                                    <i class="fa fa-code"></i>
+                                    <div class="border"></div>
+                                </div>
+                                <div class="media-body">
+                                    <h4 class="media-heading">Программирование</h4>
+                                    <p>Написание сложных сайтов на Python/Django c полным циклом разработки и интеграции базы данных.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- /.col-md-4 -->
+                    <div class="col-md-4 col-sm-6 col-xs-12">
+                        <div class="feature-2">
+                            <div class="media">
+                                <div class="pull-left">
+                                    <i class="fa fa-keyboard-o"></i>
+                                    <div class="border"></div>
+                                </div>
+                                <div class="media-body">
+                                    <h4 class="media-heading">Доработка Сайтов</h4>
+                                    <p>Устранение неполадок на существующих сайтах. Оптимизация их работы и осовременивание дизайна.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- /.col-md-4 -->
+                    
+                </div><!-- /.row -->
+            
+            </div><!-- /.container -->
+        </section>
+        <!-- End Feature Section -->
+    
+    
+    
+    <!-- Start Fun Facts Section -->
+    <section class="fun-facts">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-6 col-md-3">
+                      <div class="counter-item noselect">
+                        <i class="fa fa-cloud-upload"></i>
+                        <div class="timer" id="item1" data-to="212" data-speed="5000"></div>
+                        <h5>Коммитов в GitHub</h5>                               
+                      </div>
+                    </div>  
+                    <div class="col-xs-12 col-sm-6 col-md-3">
+                      <div class="counter-item noselect">
+                        <i class="fa fa-check"></i>
+                        <div class="timer" id="item2" data-to="33" data-speed="5000"></div>
+                        <h5>Проектов выполнено</h5>                               
+                      </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-3">
+                      <div class="counter-item noselect">
+                        <i class="fa fa-code"></i>
+                        <div class="timer" id="item3" data-to="20000" data-speed="5000"></div>
+                        <h5>Строк кода написанно</h5>                               
+                      </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-3">
+                      <div class="counter-item noselect">
+                        <i class="fa fa-male"></i>
+                        <div class="timer" id="item4" data-to="26" data-speed="5000"></div>
+                        <h5>Довольных клиентов</h5>                               
+                      </div>
+                    </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Fun Facts Section -->
+
+
+
+    <!-- Start Team Member Section -->
+    <section id="team" class="team-member-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-sm-12">
+                    <div class="section-title text-center">
+                            <h3>Про меня</h3>
+                            <p>Мои недавние фотографии</p>
+                        </div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-12">
+                    <div id="team-section">
+                                <div class="our-team">
+
+                                    <div class="team-member">
+                                        <img src="{% static 'images/team/spring-foto.jpg' %}" class="img-responsive" alt="">
+                                        <div class="team-details">
+                                            <h4>Даниил Костышак</h4>
+                                            <p>Веб-разработчик</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="team-member">
+                                        <img src="{% static 'images/team/foto-winter.jpg' %}" class="img-responsive" alt="">
+                                        <div class="team-details">
+                                            <h4>Даниил Костышак</h4>
+                                            <p>Веб-разработчик</p>
+                                            
+                                        </div>
+                                    </div>
+
+                                    <div class="team-member">
+                                        <img src="{% static 'images/team/foto-summer.JPG' %}" class="img-responsive" alt="">
+                                        <div class="team-details">
+                                           <h4>Даниил Костышак</h4>
+                                            <p>Веб-разработчик</p>
+                                          
+                                        </div>
+                                    </div>    
+
+                                    <div class="team-member">
+                                        <img src="{% static 'images/team/dacha.jpg' %}" class="img-responsive" alt="">
+                                        <div class="team-details">
+                                           <h4>Даниил Костышак</h4>
+                                            <p>Веб-разработчик</p>
+                                          
+                                        </div>
+                                    </div>
+                                </div>
+
+                    
+                    </div>
+                </div>
+            </div>
+                
+        </div>
+    </section>
+    <!-- End Team Member Section -->
+
+
+
+    <!-- Start Pricing Table Section -->
+    <div id="pricing" class="pricing-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="col-md-12">
+                        <div class="section-title text-center">
+                            <h3>Цены</h3>
+                            <p class="white-text">Лучшие ценовые предложния на создание сайтов</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                    
+            <div class="row">
+                        
+                <div class="pricing">
+                        
+                        <div class="col-md-12">
+                            <div class="pricing-table">
+                                <div class="plan-name">
+								    <h3>Landing Standart</h3>
+                                </div>
+                                <div class="plan-price">
+                                    <div class="price-value">
+                                    <span>от </span>1200 <span>грн.</span></div>
+                                    <div class="interval">под ключ</div>
+                                </div>
+                                <div class="plan-list">
+                                    <ul>
+                                        <li>Адаптивный шаблон HTML5</li>
+                                        <li>Срок создания 2-3 дня</li>
+                                        <li>Приятный дизайн</li>
+                                        <li>Высокая конверсия</li>
+                                        <li>Подключение хостинга и домена</li>
+                                    </ul>
+                                </div>
+                                <!-- <div class="plan-signup"> -->
+                                    <!-- <a href="#" class="btn-system btn-small">Узнать Больше</a> -->
+                                <!-- </div> -->
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-12">
+                            <div class="pricing-table">
+                                <div class="plan-name">
+								    <h3>Landing Premium</h3>
+                                </div>
+                                <div class="plan-price">
+                                    <div class="price-value">
+                                    <span>от </span>2000 <span>грн.</span></div>
+                                    <div class="interval">под ключ</div>
+                                </div>
+                                <div class="plan-list">
+                                    <ul>
+                                        <li>Все что в Landing Standart</li>
+                                        <li>+ Шикарный премиум шаблон</li>
+                                        <li>+ Форма обратной связи</li>
+                                        <li>+ Подготовка под SEO</li>
+                                        <li>+ Мощная админка</li>
+                                    </ul>
+                                </div>
+                                <!-- <div class="plan-signup"> -->
+                                    <!-- <a href="#" class="btn-system btn-small">Узнать Больше</a> -->
+                                <!-- </div> -->
+                            </div>
+                        </div>
+
+                        <div class="col-md-12">
+                            <div class="pricing-table">
+                                <div class="plan-name">
+								    <h3>Интернет-магазин</h3>
+                                </div>
+                                <div class="plan-price">
+                                    <div class="price-value">
+                                    <span>от </span>2800 <span>грн.</span></div>
+                                    <div class="interval">под ключ</div>
+                                </div>
+                                <div class="plan-list">
+                                    <ul>
+                                        <li>Современный дизайн</li>
+                                        <li>Корзина и онлайн оплата</li>
+                                        <li>Мощнейшая админка</li>
+                                        <li>Привязка к популярной CMS</li>
+                                        <li>Подготовка под SEO</li>
+                                    </ul>
+                                </div>
+                              <!--   <div class="plan-signup">
+                                    <a href="#" class="btn-system btn-small">Узнать Больше</a>
+                                </div> -->
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-12">
+                            <div class="pricing-table">
+                                <div class="plan-name">
+								    <h3>Django-проект</h3>
+                                </div>
+                                <div class="plan-price">
+                                    <div class="price-value">
+                                    <span>от </span>3000 <span>грн.</span></div>
+                                    <div class="interval">под ключ</div>
+                                </div>
+                                <div class="plan-list">
+                                    <ul>
+                                        <li>Работа с SQLite, MySQL</li>
+                                        <li>Возможность мультиязычности</li>
+                                        <li>Регистрация через соцсети</li>
+                                        <li>Подключение API</li>
+                                        <li>Интеграция jQuery, Ajax</li>
+                                    </ul>
+                                </div>
+                                <!-- <div class="plan-signup"> -->
+                                    <!-- <a href="#" class="btn-system btn-small">Узнать Больше</a> -->
+                                <!-- </div> -->
+                            </div>
+                        </div>
+                    
+                        <div class="col-md-12">
+                            <div class="pricing-table">
+                                <div class="plan-name">
+								    <h3>Доработка сайтов</h3>
+                                </div>
+                                <div class="plan-price">
+                                  <div class="price-value">
+                                    <span>от </span>5$ <span> час</span></div>
+                                    <div class="interval">почасовая оплата</div>
+                                </div>
+                                <div class="plan-list">
+                                    <ul>
+                                        <li>Коррекция верстки</li>
+                                        <li>Подключение скриптов</li>
+                                        <li>Дебаг и рефакторинг кода</li>
+                                        <li>Модернизация движков</li>
+                                        <li>Ускорение работы сайта</li>
+                                    </ul>
+                                </div>
+                                <!-- <div class="plan-signup"> -->
+                                    <!-- <a href="#" class="btn-system btn-small">Узнать Больше</a> -->
+                                <!-- </div> -->
+                            </div>
+                        </div>
+                        
+                        
+                        
+                    </div>
+						
+						
+            </div>
+        </div>
+    </div>
+    <!-- End Pricing Table Section -->
+    
+    
+    
+    <!-- Start Latest News Section -->
+    <!-- <section id="latest-news" class="latest-news-section"> -->
+        <!-- <div class="container"> -->
+            <!-- <div class="row"> -->
+                <!-- <div class="col-md-12"> -->
+                    <!-- <div class="section-title text-center"> -->
+                        <!-- <h3>Блог</h3> -->
+                        <!-- <p>Разработка - это не рутина. Разработка - это исскуство</p> -->
+                    <!-- </div> -->
+                <!-- </div> -->
+            <!-- </div> -->
+            <!-- <div class="row"> -->
+                <!-- <div class="latest-news"> -->
+                    <!-- <div class="col-md-12"> -->
+                        <!-- <div class="latest-post"> -->
+                            <!-- <img src="{% static 'images/about-01.jpg' %}" class="img-responsive" alt=""> -->
+                            <!-- <h4><a href="#">Standard Post with Image</a></h4> -->
+                            <!-- <div class="post-details"> -->
+                                <!-- <span class="date"><strong>31</strong> <br>Dec , 2014</span> -->
+                                
+                            <!-- </div> -->
+                            <!-- <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p> -->
+                            <!-- <a href="#" class="btn btn-primary">Read More</a> -->
+                        <!-- </div> -->
+                    <!-- </div> -->
+                    <!-- <div class="col-md-12"> -->
+                        <!-- <div class="latest-post"> -->
+                            <!-- <img src="{% static 'images/about-02.jpg' %}" class="img-responsive" alt=""> -->
+                            <!-- <h4><a href="#">Standard Post with Image</a></h4> -->
+                            <!-- <div class="post-details"> -->
+                                <!-- <span class="date"><strong>17</strong> <br>Feb , 2014</span> -->
+                                
+                            <!-- </div> -->
+                            <!-- <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p> -->
+                            <!-- <a href="#" class="btn btn-primary">Read More</a> -->
+                        <!-- </div> -->
+                    <!-- </div> -->
+                    <!-- <div class="col-md-12"> -->
+                        <!-- <div class="latest-post"> -->
+                            <!-- <img src="{% static 'images/about-03.jpg' %}" class="img-responsive" alt=""> -->
+                            <!-- <h4><a href="#">Standard Post with Image</a></h4> -->
+                            <!-- <div class="post-details"> -->
+                                <!-- <span class="date"><strong>08</strong> <br>Aug , 2014</span> -->
+                                
+                            <!-- </div> -->
+                            <!-- <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p> -->
+                            <!-- <a href="#" class="btn btn-primary">Read More</a> -->
+                        <!-- </div> -->
+                    <!-- </div> -->
+                    <!-- <div class="col-md-12"> -->
+                        <!-- <div class="latest-post"> -->
+                            <!-- <img src="{% static 'images/about-01.jpg' %}" class="img-responsive" alt=""> -->
+                            <!-- <h4><a href="#">Standard Post with Image</a></h4> -->
+                            <!-- <div class="post-details"> -->
+                                <!-- <span class="date"><strong>08</strong> <br>Aug , 2014</span> -->
+                                
+                            <!-- </div> -->
+                            <!-- <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p> -->
+                            <!-- <a href="#" class="btn btn-primary">Read More</a> -->
+                        <!-- </div> -->
+                    <!-- </div> -->
+                    <!-- <div class="col-md-12"> -->
+                        <!-- <div class="latest-post"> -->
+                            <!-- <img src="{% static 'images/about-02.jpg' %}" class="img-responsive" alt=""> -->
+                            <!-- <h4><a href="#">Standard Post with Image</a></h4> -->
+                            <!-- <div class="post-details"> -->
+                                <!-- <span class="date"><strong>08</strong> <br>Aug , 2014</span> -->
+                                
+                            <!-- </div> -->
+                            <!-- <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p> -->
+                            <!-- <a href="#" class="btn btn-primary">Read More</a> -->
+                        <!-- </div> -->
+                    <!-- </div> -->
+                    <!-- <div class="col-md-12"> -->
+                        <!-- <div class="latest-post"> -->
+                            <!-- <img src="{% static 'images/about-03.jpg' %}" class="img-responsive" alt=""> -->
+                            <!-- <h4><a href="#">Standard Post with Image</a></h4> -->
+                            <!-- <div class="post-details"> -->
+                                <!-- <span class="date"><strong>08</strong> <br>Aug , 2014</span> -->
+                                
+                            <!-- </div> -->
+                            <!-- <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p> -->
+                            <!-- <a href="#" class="btn btn-primary">Read More</a> -->
+                        <!-- </div> -->
+                    <!-- </div> -->
+                <!-- </div> -->
+            <!-- </div> -->
+        <!-- </div> -->
+    <!-- </section> -->
+    <!-- End Latest News Section -->
+
+
+
+    
+    
+    
+    <!-- Start Testimonial Section -->
+    <div id="testimonial" class="testimonial-section">
+        <div class="container">
+            <!-- Start Testimonials Carousel -->
+            <div id="testimonial-carousel" class="testimonials-carousel">
+             <!-- Testimonial 3 -->
+                <div class="testimonials item">
+                    <div class="testimonial-content noselect">
+                        <img src="{% static 'images/testimonial/denis.jpg' %}" alt="" >
+                        <div class="testimonial-author">
+                            <div class="author">Денис Широков</div>
+                            <div class="designation">Senior Perl Developer</div>
+                        </div>
+                        <p>Даниил сделал мне два проекта на Django, <br> в которых успешно подключил несколько АPI и сделал качественный <br>фронтенд с использованием Ajax. Сотрудничество было продуктивным.<br>  Он проявил себя как хороший специалист по Python/Django. </p>
+                    </div>
+                </div>
+
+                <!-- Testimonial 1 -->
+                <div class="testimonials item">
+                    <div class="testimonial-content noselect">
+                        <img src="{% static 'images/testimonial/vlad.jpg' %}" alt="" >
+                        <div class="testimonial-author">
+                            <div class="author">Влад Каснер</div>
+                            <div class="designation">Marketing Manager</div>
+                        </div>
+                        <p>Заказ по созданию лендинга был выполнен в краткие сроки и согласно ТЗ.
+                        <br> Во время выполнения задания исполнитель был постоянно на связи. 
+                        <br>Благодарен за работу и однозначно рекомендую иметь с ним дело!</p>
+                    </div>
+                </div>
+                <!-- Testimonial 2 -->
+                <div class="testimonials item">
+                    <div class="testimonial-content noselect">
+                        <img src="{% static 'images/testimonial/eva.jpg' %}" alt="" >
+                        <div class="testimonial-author">
+                            <div class="author">Ева Грицишина</div>
+                            <div class="designation">HR Manager</div>
+                        </div>
+                        <p>Креативный и ответственный разработчик, рекомендую. <br> Успешно выполнил заказ по созданию Лендинга с формой <br> обратной связи и интеграцией Google Maps.</p>
+                    </div>
+                </div>
+               
+            </div>
+            <!-- End Testimonials Carousel -->
+        </div>
+    </div>
+    <!-- End Testimonial Section -->
+    
+    
+
+    <!-- Clients Aside -->
+    <section id="partner">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="section-title text-center">
+                        <h3>Партнеры</h3>
+                        <p>Взаимодействие - движущая сила прогресса</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="clients">
+                    
+                    <div class="col-md-12">
+                        <img src="{% static 'images/logos/themeforest.jpg' %}" class="img-responsive" alt="...">
+                    </div>
+                    
+                    <div class="col-md-12">
+                        <img src="{% static 'images/logos/creative-market.jpg' %}" class="img-responsive" alt="...">
+                    </div>
+                    
+                    <div class="col-md-12">
+                        <img src="{% static 'images/logos/designmodo.jpg' %}" class="img-responsive" alt="...">
+                    </div>
+                    
+                    
+                    <div class="col-md-12">
+                        <img src="{% static 'images/logos/envato.jpg' %}" class="img-responsive" alt="...">
+                    </div>
+                
+                    
+                    <div class="col-md-12">
+                        <img src="{% static 'images/logos/wix.png' %}" class="img-responsive" alt="...">
+                    </div>
+                    
+                    <div class="col-md-12">
+                        <img src="{% static 'images/logos/wordpress.jpg' %}" class="img-responsive" alt="...">
+                    </div>
+            
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title text-center noselect">
+                        <h3>Связатся со мной</h3>
+                        <p class="white-text">Свяжитесь со мной через форму обратной связи или выберете вариант приведенный ниже</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+
+                    <form name="sentMessage" method="post">
+                    {% csrf_token %}
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Ваше имя *" id="names" required data-validation-required-message="Пожалуйста напишите ваше имя." name="name">
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" class="form-control" placeholder="Ваш Email *" id="emails" required data-validation-required-message="Пожалуйста введите ваш email ." name="email">
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                                <div class="form-group">
+                                    <input type="tel" class="form-control" placeholder="Ваш телефон *" id="phones" required data-validation-required-message="Пожалуйста укажите ваш телефон." name="phone">
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <textarea class="form-control" placeholder="Ваше сообщение *" id="messages" required data-validation-required-message="Пожалуйста оставте ваше сообщение." name="message"></textarea>
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                            </div>
+                            <div class="clearfixff"></div>
+                            <div class="col-lg-12 text-center">
+                                <div id="success-button">
+                                     {% if messages %}
+                <div class="alert alert-warning" role="alert" style="width: 100%; margin-top: 3%;">
+                    {% for message in messages %}
+                        {{ message }}
+                    {% endfor %}
+                </div>
+            {% endif %}
+
+            {% if request.GET.status_message %}
+                <div class="alert alert-warning" id ="alert-warning"
+                role="alert" style="width: 100%; margin-top: 3%;">{{ request.GET.status_message }}
+                </div>
+            {% endif %}
+
+                {{ block.super }}
+                                </div>
+                                <button type="submit" class="btn btn-primary">Отправить</button>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+
+
+            </div>
+
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="footer-contact-info noselect">
+                        <h4>Связь со мной</h4>
+                        <ul>
+                            <li><strong>
+                            <i class="fa fa-envelope-o" aria-hidden="true"></i> </strong><a class ="contacts" href="mailto:lemk@ukr.net"> lemk@ukr.net</a></li>
+                            <li><strong>
+                            <i class="fa fa-phone" aria-hidden="true"></i> </strong> <a class ="contacts" href="tel:+38093746550"> +38 093 742 65 50 </a> (Viber, WhatsApp)</li>
+                            <li><strong><i class="fa fa-telegram" aria-hidden="true"></i> Telegram: </strong><a class ="contacts" href="https://t.me/lemk1" target="_blank">@lemk1</a></li>
+                            <li><strong><i class="fa fa-facebook" aria-hidden="true"></i> Facebook: </strong><a class ="contacts" href="https://www.facebook.com/lemk.ua" target="_blank">www.facebook.com/lemk.ua</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-4 col-md-offset-4">
+                    <div class="footer-contact-info noselect">
+                        <h4>Контактная информация</h4>
+                        <ul>
+                            <li><strong><i class="fa fa-map-marker" aria-hidden="true"></i> Страна:</strong> Украина, Харьковская область</li>
+                            <li><strong><i class="fa fa-home" aria-hidden="true"></i> Город:</strong> Харьков, индекс 61013</li>
+                            <li><strong><i class="fa fa-calendar" aria-hidden="true"></i> Рабочие дни:</strong> Понедельник-Суббота</li>
+                            <li><strong><i class="fa fa-tachometer" aria-hidden="true"></i> Рабочие часы:</strong> 9.00-22.00</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="style-1">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 col-xs-12 noselect">
+                        <span class="copyright">Авторские права &copy; <a href="http://lemk.site">lemk.site</a> 2018</span>
+                    </div>
+                    <div class="col-md-4 col-xs-12 noselect">
+                        <div class="footer-social text-center">
+                            <ul>
+                                <li><a target="_blank" href="https://www.facebook.com/lemk.ua"><i class="fa fa-twitter"></i></a></li>
+                                <li><a target="_blank" href="https://twitter.com/lemk1997"><i class="fa fa-facebook"></i></a></li>
+                                <li><a target="_blank" href="https://plus.google.com/u/0/106401310590041956412"><i class="fa fa-google-plus"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-xs-12 noselect">
+                        <div class="footer-link">
+                            <ul class="pull-right">
+                                <li><a href="#">Разработчик: Даниил Костышак</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </section>
+
+
+    <div id="loader">
+        <div class="spinner">
+            <div class="dot1"></div>
+            <div class="dot2"></div>
+        </div>
+    </div>
+
+    
+
+    <!-- jQuery Version 2.1.1 -->
+    <script src="{% static 'js/jquery-2.1.1.min.js' %}"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="{% static 'asset/js/bootstrap.min.js' %}"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="{% static 'js/jquery.easing.1.3.js' %}"></script>
+    <script src="{% static 'js/classie.js' %}"></script>
+    <script src="{% static 'js/count-to.js' %}"></script>
+    <script src="{% static 'js/jquery.appear.js' %}"></script>
+    <script src="{% static 'js/cbpAnimatedHeader.js' %}"></script>
+    <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+	<script src="{% static 'js/jquery.fitvids.js' %}"></script>
+	<script src="{% static 'js/styleswitcher.js' %}"></script>
+
+    <!-- Contact Form JavaScript -->
+
+    <!-- Custom Theme JavaScript -->
+    <script src="{% static 'js/script.js' %}"></script>
+
+</body>
+
+</html>
