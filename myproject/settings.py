@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sites',
+	'robots',
     'crispy_forms',
     'lemk',
 ]
@@ -149,3 +150,5 @@ EMAIL_USE_SSL = True
 SITE_ID = 1
 
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
+
+ROBOTS_USE_SITEMAP = False

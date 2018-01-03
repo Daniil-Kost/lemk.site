@@ -8,6 +8,16 @@
 <html lang="en">
 
 <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111943803-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-111943803-1');
+    </script>
+
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,8 +27,11 @@
 
     <title>{% trans 'Lemk - разработка сайтов от Даниила Костышака' %}</title>
 
-    <!-- Facicon -->
-    <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}" />
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="{% static 'images/favicon.png' %}" />
+
+    <!-- Cannonical link -->
+    <link rel=”canonical” href="http://lemk.site/"/>
 
     <!-- Bootstrap Core CSS -->
     <link href="{% static 'asset/css/bootstrap.min.css' %}" rel="stylesheet">
