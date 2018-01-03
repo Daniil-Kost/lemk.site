@@ -152,6 +152,18 @@ li {
     color: #fff;
 }
 
+
+@media(max-width:768px) {
+.navbar-default .nav li a {
+    text-transform: uppercase;
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 400;
+    letter-spacing: 1px;
+    color: #fff;
+    font-size: 6px;
+}
+}
+
 @media(min-width:768px) {
     .navbar-default {
         padding: 25px 0;
@@ -162,6 +174,7 @@ li {
         -o-transition: padding .3s;
         transition: padding .3s;
     }
+
 
     .navbar-default .navbar-brand {
         font-size: 2em;
@@ -237,7 +250,7 @@ li {
 }
 
 
-@media (max-width : 479px) {
+@media (max-width : 769px) {
     .menu-button {
         width: 1.5em;
         height: 1.5em;
@@ -258,7 +271,7 @@ li {
     }
 }
 
-@media (max-width : 767px) {
+@media (max-width : 769px) {
     .menu-button {
         width: 2em;
         height: 2em;
@@ -720,15 +733,39 @@ li {
 }
 
 
-@media (max-width : 479px) {
+@media (max-width : 600px) {
     
     #main-slide .item .slider-content{
-		display: none;
+		display: block;
 	}
     
     #main-slide .item {
-        height: 180px;
+        height: 250px;
     }
+
+    .animated3 {
+    	display: none;
+
+    }
+
+
+    #main-slide .slider-content h1{
+		font-size: 19px;
+		line-height: normal;
+		margin-bottom: 0;
+	}
+	#main-slide .slider-content p{
+		font-size: 12px;
+		margin-top: 0px;
+	}
+	.slider.btn{
+		padding: 0 1px;
+		margin-top: 0px;
+		font-size: 11px;
+		display: none;
+	}
+
+    
     
 }
 
@@ -1813,6 +1850,7 @@ footer.style-1 .footer-link li {
 	padding: 13px;
 	font-size: 14px;
 	border-bottom: 1px solid #eee;
+	height: 70px;
 }
 
 .plan-list li:first-child {
