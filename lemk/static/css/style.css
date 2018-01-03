@@ -143,7 +143,7 @@ li {
 }
 
 
-@media(max-width:768px) {
+@media(max-width:1024px) {
 .navbar-default .nav li a {
     text-transform: uppercase;
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
@@ -155,7 +155,7 @@ li {
 }
 
 
-@media(max-width:1024px) {
+@media(max-width: 1024px)  {
     .navbar-default {
         padding: 25px 0;
         border: 0;
@@ -173,7 +173,7 @@ li {
     font-weight: 400;
     letter-spacing: 1px;
     color: #fff;
-    font-size: 10px;
+    font-size: 6px;
 		}
 
 
