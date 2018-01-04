@@ -143,7 +143,7 @@ li {
 }
 
 
-@media(max-width:1024px) {
+@media(max-width:768px) {
 .navbar-default .nav li a {
     text-transform: uppercase;
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
@@ -152,6 +152,21 @@ li {
     color: #fff;
     font-size: 6px;
 }
+}
+
+
+@media only screen 
+and (min-width : 770px) 
+and (max-width : 1024px) {
+
+	.navbar-default .nav li a {
+    text-transform: uppercase;
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 400;
+    letter-spacing: 1px;
+    color: #fff;
+    font-size: 10px;
+		}
 }
 
 
@@ -167,14 +182,6 @@ li {
     }
 
 		
-	.navbar-default .nav li a {
-    text-transform: uppercase;
-    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
-    font-weight: 400;
-    letter-spacing: 1px;
-    color: #fff;
-    font-size: 6px;
-		}
 
 
     .navbar-default .navbar-brand {
