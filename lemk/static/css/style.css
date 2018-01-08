@@ -143,7 +143,7 @@ li {
 }
 
 
-@media(max-width:768px) {
+@media(max-width:960px) {
 .navbar-default .nav li a {
     text-transform: uppercase;
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
@@ -156,7 +156,7 @@ li {
 
 
 @media only screen 
-and (min-width : 770px) 
+and (min-width : 970px) 
 and (max-width : 1024px) {
 
 	.navbar-default .nav li a {
@@ -170,7 +170,9 @@ and (max-width : 1024px) {
 }
 
 
-@media(max-width: 1024px)  {
+@media only screen 
+and (min-width : 767px) 
+and (max-width : 1024px) {
     .navbar-default {
         padding: 25px 0;
         border: 0;
@@ -779,7 +781,7 @@ and (max-width : 1024px) {
 	}
     
     #main-slide .item .slider-content{
-		display: none;
+		display: block;
 	}
     
     #main-slide .item {
