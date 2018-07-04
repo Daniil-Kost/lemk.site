@@ -15,20 +15,16 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
-from .settings import MEDIA_ROOT, DEBUG
-
 from lemk.views import main_page
 
 js_info_dict = {
-	'packages': ('lemk',),
+    'packages': ('lemk',),
 }
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^$', main_page, 
-	name = 'home'),
-	url(r'^robots\.txt', include('robots.urls')),
+    url(r'^$', main_page,
+        name='home'),
+    url(r'^robots\.txt', include('robots.urls')),
 
 ]
-
-
