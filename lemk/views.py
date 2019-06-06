@@ -2,7 +2,7 @@
 
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
-from django.core.urlresolvers import reverse
+from django.urls import reverse
 from django.core.mail import send_mail
 from django import forms
 from crispy_forms.helper import FormHelper
@@ -35,8 +35,8 @@ class ContactFormRus(forms.Form):
 
 
 def main_page(request):
-    title = u'СООБЩЕНИЕ НА LEMK. Имя: '
-    txt = u', тел: '
+    title = 'СООБЩЕНИЕ НА LEMK. Имя: '
+    txt = ', тел: '
     from_email = EMAIL_HOST_USER
 
     if request.method == 'POST':

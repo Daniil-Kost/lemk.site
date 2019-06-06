@@ -13,7 +13,8 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-from django.conf.urls import url, include
+from django.conf.urls import include, url
+from django.urls import path
 from django.contrib import admin
 from lemk.views import main_page
 
@@ -22,9 +23,8 @@ js_info_dict = {
 }
 
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
-    url(r'^$', main_page,
-        name='home'),
+    path('admin/', admin.site.urls),
+    path('', main_page, name='home'),
     url(r'^robots\.txt', include('robots.urls')),
 
 ]
