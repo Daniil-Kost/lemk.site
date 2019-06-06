@@ -1,5 +1,5 @@
-Django==1.11.8
-django-crispy-forms==1.6.1
+Django==2.1
+django-crispy-forms
 Pillow
 django-robots
 flake8
